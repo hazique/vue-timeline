@@ -1,41 +1,28 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script >
+import SlotTimeline from './components/SlotTimeline.vue'
+import data from './assets/data.json'
+import { ref } from 'vue';
+
+export default {
+  components: {
+    SlotTimeline
+  },
+
+  data(){
+    return {
+      data: ref(data)
+    }
+  },
+  mounted(){
+  }
+}
 </script>
 
 <template>
-  <v-timeline direction="horizontal" align="start" truncate-line="end">
-    <v-timeline-item>
-      <div>
-        <div class="text-h6">Content title</div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-    </v-timeline-item>
-
-    <v-timeline-item>
-      <div>
-        <div class="text-h6">Content title</div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-    </v-timeline-item>
-
-    <v-timeline-item>
-      <div>
-        <div class="text-h6">Content title</div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-    </v-timeline-item>
-  </v-timeline>
+  <SlotTimeline :jsonData=data msg="Test Message"></SlotTimeline>
 </template>
 
 <style>
-.v-timeline-divider{
-  width: 120%;
-}
+
 </style>
 
